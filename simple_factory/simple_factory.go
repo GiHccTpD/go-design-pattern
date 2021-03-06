@@ -1,4 +1,4 @@
-package factory
+package simple_factory
 
 import "errors"
 
@@ -13,7 +13,7 @@ type RedisCache struct {
 	data map[string]string
 }
 
-func (redis * RedisCache) Set(key, value string) {
+func (redis *RedisCache) Set(key, value string) {
 	redis.data[key] = value
 }
 
@@ -26,7 +26,7 @@ type MemCache struct {
 	data map[string]string
 }
 
-func (mem * MemCache) Set(key, value string) {
+func (mem *MemCache) Set(key, value string) {
 	mem.data[key] = value
 }
 
@@ -42,7 +42,7 @@ const (
 )
 
 // 实现Cache的简单工厂
-type CacheFactory struct {}
+type CacheFactory struct{}
 
 func (factory *CacheFactory) Create(cacheType cacheType) (Cache, error) {
 	if cacheType == redis {
