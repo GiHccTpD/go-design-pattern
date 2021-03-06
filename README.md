@@ -10,3 +10,11 @@ mem data: m1
 PASS
 ok  	command-line-arguments	0.619s
 ```
+### 优点
+ 实现了解耦
+ 
+### 缺点
+ 违背了"开闭原则"
+
+### 适合
+ 创建的对象比较少 
